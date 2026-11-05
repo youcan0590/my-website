@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Workshop | SVU Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+ 
+<body>
+ 
+    <header>
+        <img src="assets/img/svu-logo.png" alt="Syrian Virtual University Logo">
+        <h1>Syrian Virtual University Events</h1>
+    </header>
+ 
+    <nav class="navbar navbar-expand-md" data-bs-theme="dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <main>
+ 
+        
+        <section class="hero">
+            <h2 id="event-title"></h2>
+            <span id="event-badge" class="badge"></span>
+        </section>
+
+        
+         <section class="event-details" id="event-details">
+            <div class="container">
+                <div class="row g-4">
+ 
+                    <div class="col-lg-8">
+                        <ul class="event-info">
+                            <li><strong>Date:</strong> <span id="event-date"></span></li>
+                            <li><strong>Location:</strong> <span id="event-location"></span></li>
+                        </ul>
+ 
+                        <img id="event-image" class="event-image" src="" alt="">
+ 
+                        <h3>Event Description</h3>
+                        <p id="event-description"></p>
+ 
+                        <div class="event-actions">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reserveModal">Reserve a Spot</button>
+                            <button type="button" id="calendar-btn" class="btn btn-outline-primary">Add to Calendar</button>
+                            <button type="button" id="share-btn" class="btn btn-outline-primary">Share</button>
+                        </div>
+                    </div>
+ 
+                    <div class="col-lg-4 event-sidebar">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Location</h3>
+                                
+                                <img id="event-map" class="card-img-top" src="" alt="">
+                                <p id="event-venue" class="card-text"></p>
+                            </div>
+                        </div>
+ 
+                        <div class="card" id="event-gallery-card">
+                            <div class="card-body">
+                                <h3 class="card-title">Gallery</h3>
+                                <div class="row g-2 event-gallery" id="event-gallery"></div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+        </section>
+
+        <section class="related-events" id="related-events">
+            <h2>Related Events</h2>
+ 
+            <div class="container">
+                <div class="row g-4" id="related-events-list"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal fade" id="reserveModal" tabindex="-1" aria-labelledby="reserveModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+ 
+                <div class="modal-header">
+                    <h3 class="modal-title" id="reserveModalTitle">Reserve a Spot</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+ 
+                <div class="modal-body">
+                    <p id="reserveEventInfo"></p>
+ 
+                    <div id="reserveAlert" class="alert d-none" role="alert"></div>
+ 
+                    <form id="reserveForm" novalidate>
+                        <div class="reserve-field">
+                            <label for="reserveName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="reserveName" placeholder="Enter your name">
+                        </div>
+ 
+                        <div class="reserve-field">
+                            <label for="reserveEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="reserveEmail" placeholder="name@example.com">
+                        </div>
+                    </form>
+                </div>
+ 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="reserveForm" class="btn btn-primary">Confirm Reservation</button>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+ 
+ 
+    <footer>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Email: info@svuonline.org</p>
+            <p>Syrian Virtual University</p>
+        </div>
+ 
+        <div>
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+ 
+        <p>&copy; 2026 Syrian Virtual University Events. All rights reserved</p>
+    </footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+ 
+</body>
+ 
+</html>
+ 
